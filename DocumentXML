@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cataleg SYSTEM "cataleg.dtd">
+
+<cataleg>
+
+    <single codi="S001">
+        <titol>Imagine</titol>
+        <descripcio>Cançó icònica de pau</descripcio>
+        <pais>Regne Unit</pais>
+        <idioma>Anglès</idioma>
+        <genere>Rock and Roll</genere>
+        <grup>John Lennon</grup>
+        <membres>
+            <membre sexe="home">
+                <nom>John Lennon</nom>
+            </membre>
+        </membres>
+        <durada>3.1</durada>
+    </single>
+
+    <album codi="A001">
+        <titol>Kind of Blue</titol>
+        <pais>Estats Units</pais>
+        <idioma>Instrumental</idioma>
+        <genere>Jazz</genere>
+        <grup>Miles Davis Sextet</grup>
+        <membres>
+            <membre sexe="home">
+                <nom>Miles Davis</nom>
+            </membre>
+            <membre sexe="home">
+                <nom>John Coltrane</nom>
+            </membre>
+        </membres>
+        <numero_cancons>5</numero_cancons>
+        <titols_cancons>
+            <canco numero="1">
+                <titol_canco>So What</titol_canco>
+                <durada_canco>9.2</durada_canco>
+            </canco>
+            <canco numero="2">
+                <titol_canco>Freddie Freeloader</titol_canco>
+                <durada_canco>9.5</durada_canco>
+            </canco>
+        </titols_cancons>
+    </album>
+
+</cataleg>
