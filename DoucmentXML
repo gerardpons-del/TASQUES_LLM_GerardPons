@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cataleg SYSTEM "DTDesquema">
+<cataleg>
+
+  <!-- Exemple de Single -->
+  <single codi="S001">
+    <titol>Shape of You</titol>
+    <descripcio>Hit internacional de pop</descripcio>
+    <pais>UK</pais>
+    <idioma>Anglès</idioma>
+    <genere><pop/></genere>
+    <grup>Ed Sheeran</grup>
+    <membres>
+      <membre sexe="home">
+        <nom>Ed Sheeran</nom>
+      </membre>
+    </membres>
+    <durada>4</durada>
+  </single>
+
+  <!-- Exemple d'Àlbum -->
+  <album codi="A001">
+    <titol>Abbey Road</titol>
+    <descripcio>Àlbum clàssic dels Beatles</descripcio>
+    <pais>UK</pais>
+    <idioma>Anglès</idioma>
+    <genere><rockandroll/></genere>
+    <grup>The Beatles</grup>
+    <membres>
+      <membre sexe="home"><nom>John Lennon</nom></membre>
+      <membre sexe="home"><nom>Paul McCartney</nom></membre>
+      <membre sexe="home"><nom>George Harrison</nom></membre>
+      <membre sexe="home"><nom>Ringo Starr</nom></membre>
+    </membres>
+    <numero_cancions>3</numero_cancions>
+    <titols_cancos>
+      <canco numero="1">
+        <titol_canco>Come Together</titol_canco>
+        <durada_canco>4:20</durada_canco>
+      </canco>
+      <canco numero="2">
+        <titol_canco>Something</titol_canco>
+        <durada_canco>3:03</durada_canco>
+      </canco>
+      <canco numero="3">
+        <titol_canco>Octopus's Garden</titol_canco>
+        <durada_canco>2:51</durada_canco>
+      </canco>
+    </titols_cancos>
+  </album>
+
+</cataleg>

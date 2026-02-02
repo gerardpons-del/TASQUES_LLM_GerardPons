@@ -1,0 +1,45 @@
+﻿<!ELEMENT root (element+)>
+<!ELEMENT element (#PCDATA)>
+<!-- Definició de l'arrel -->
+<!ELEMENT cataleg (single | album)*>
+
+<!-- Single -->
+<!ELEMENT single (titol, descripcio?, pais, idioma, genere+, grup, membres, durada)>
+<!ATTLIST single codi CDATA #REQUIRED>
+
+<!-- Album -->
+<!ELEMENT album (titol, descripcio?, pais, idioma, genere+, grup, membres, numero_cancions, titols_cancos)>
+<!ATTLIST album codi CDATA #REQUIRED>
+
+<!-- Elements textuals simples -->
+<!ELEMENT titol (#PCDATA)>
+<!ELEMENT descripcio (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+<!ELEMENT idioma (#PCDATA)>
+<!ELEMENT durada (#PCDATA)>
+
+<!-- Generes musicals -->
+<!ELEMENT genere (classica | jazz | blues | gospel | soul | pop | rockandroll | country)>
+<!ELEMENT classica EMPTY>
+<!ELEMENT jazz EMPTY>
+<!ELEMENT blues EMPTY>
+<!ELEMENT gospel EMPTY>
+<!ELEMENT soul EMPTY>
+<!ELEMENT pop EMPTY>
+<!ELEMENT rockandroll EMPTY>
+<!ELEMENT country EMPTY>
+
+<!-- Grup i membres -->
+<!ELEMENT grup (#PCDATA)>
+<!ELEMENT membres (membre+)>
+<!ELEMENT membre (nom)>
+<!ATTLIST membre sexe (home | dona) #REQUIRED>
+<!ELEMENT nom (#PCDATA)>
+
+<!-- Àlbums: número de cançons i llista de cançons -->
+<!ELEMENT numero_cancions (#PCDATA)>
+<!ELEMENT titols_cancos (canco+)>
+<!ELEMENT canco (titol_canco, durada_canco)>
+<!ATTLIST canco numero CDATA #REQUIRED>
+<!ELEMENT titol_canco (#PCDATA)>
+<!ELEMENT durada_canco (#PCDATA)>
