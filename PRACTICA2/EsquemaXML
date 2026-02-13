@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cataleg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="esquemaXSD">
+
+  <single codi="S001">
+    <titol>Imagine</titol>
+    <descripcio>Clàssic de John Lennon</descripcio>
+    <pais>Regne Unit</pais>
+    <idioma>Anglès</idioma>
+    <genere>pop</genere>
+    <grup>John Lennon</grup>
+    <membres>
+      <membre sexe="home">
+        <nom>John Lennon</nom>
+      </membre>
+    </membres>
+    <durada>3.05</durada>
+  </single>
+
+  <album codi="A001">
+    <titol>The Dark Side of the Moon</titol>
+    <descripcio>Àlbum emblemàtic de Pink Floyd</descripcio>
+    <pais>Regne Unit</pais>
+    <idioma>Anglès</idioma>
+    <genere>rock and roll</genere>
+    <grup>Pink Floyd</grup>
+    <membres>
+      <membre sexe="home">
+        <nom>David Gilmour</nom>
+      </membre>
+      <membre sexe="home">
+        <nom>Roger Waters</nom>
+      </membre>
+    </membres>
+    <numero_cancoes>2</numero_cancoes>
+    <titols_cancoes>
+      <canco numero="1">
+        <titol>Speak to Me</titol>
+        <durada>1.30</durada>
+      </canco>
+      <canco numero="2">
+        <titol>Breathe</titol>
+        <durada>2.43</durada>
+      </canco>
+    </titols_cancoes>
+  </album>
+
+</cataleg>
