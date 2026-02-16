@@ -1,0 +1,157 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Customers",
+  "type": "object",
+  "properties": {
+    "Customers": {
+      "type": "array",
+      "items": {
+        "AnyOf": [
+          {
+            "type": "object",
+            "title": "individual",
+            "required": [
+              "cust_id",
+              "fed_id",
+              "first_name_ind",
+              "last_name_ind"
+            ],
+            "properties": {
+              "cust_id": {
+                "type": "string"
+              },
+              "address": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "city": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fed_id": {
+                "type": "string"
+              },
+              "postal_code": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "state": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  "MA",
+                  "NH",
+                  "RI",
+                  "VE",
+                  "CN",
+                  "NY"
+                ]
+              },
+              "birth_date": {
+                "type": "string",
+                "format": "date"
+              }
+            },
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "title": "business",
+            "required": [
+              "cust_id",
+              "fed_id",
+              "name",
+              "state_id",
+              "officer"
+            ],
+            "properties": {
+              "cust_id": {
+                "type": "string"
+              },
+              "address": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "city": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fed_id": {
+                "type": "string"
+              },
+              "postal_code": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "state": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "incorp_date": {
+  "type": ["string","null"],
+  "format": "date"
+},
+              "officer": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "officer_id",
+                    "first_name_off",
+                    "last_name_off"
+                  ],
+                  "properties": {
+                    "officer_id": {
+                      "type": "string"
+                    },
+                    "end_date": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "date"
+                    },
+                    "first_name_off": {
+                      "type": "string"
+                    },
+                    "last_name_off": {
+                      "type": "string"
+                    },
+                    "start_date": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "date"
+                    },
+                    "title": {
+                      "type": ["string","null"]
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false

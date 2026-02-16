@@ -1,0 +1,44 @@
+﻿{
+  "Customers": [{
+    "cust_id": "001",
+    "address": "C/Joan Alcover",
+    "city": "Alaro",
+    "fed_id": "04-11111111",
+    "postal_code": "07340",
+    "state": "MA",
+    "first_name_ind": "Gerard",
+    "last_name_ind": "Pons",
+    "birth_date": "2007-01-19",
+  },
+  {
+                
+    "cust_id": "002",
+    "address": "C/joan escriptor",
+    "city": "Consell",
+    "fed_id": "03-11111111",
+    "postal_code": "07341",
+    "state": "RI",
+    "name": "Alex",
+    "state_id": "12-345-678",
+    "incorp_date": "2005-09-12",
+    "officer":[
+    {
+      "officer_id":"412",
+      "end_date": "2029-12-31",
+      "First_name_off": "Biel",
+      "last_name_off": "Campins",
+      "start_date": "2026-02-12",
+      "title": "President",
+     
+     
+  }
+  ]
+  }           
+               
+               
+               ]
+  
+    
+  
+        
+}
