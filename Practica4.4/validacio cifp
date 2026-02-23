@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cifp SYSTEM "cifp">
+
+<cifp>
+  <alumne id="1">
+    <nom>Joan</nom>
+    <llinatges>Garcia Pons</llinatges>
+    <data_matricula>2024-09-01</data_matricula>
+    <curs>DAM</curs>
+  </alumne>
+</cifp>

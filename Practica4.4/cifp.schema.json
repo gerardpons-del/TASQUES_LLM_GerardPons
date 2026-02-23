@@ -1,0 +1,78 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "cifp": {
+      "type": "object",
+      "properties": {
+        "alumne": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/alumne" }
+        },
+        "professor": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/professor" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "curs": {
+      "type": "string",
+      "enum": ["DAM","DAW","ASIX","SMX","SEIA","ER","AUT"]
+    },
+
+    "departament": {
+      "type": "string",
+      "enum": ["Informàtica","Electricitat","Automoció"]
+    },
+
+    "assignatura": {
+      "type": "object",
+      "properties": {
+        "id_assignatura": { "type": "integer" },
+        "nom_assignatura": { "type": "string" },
+        "cicle": { "$ref": "#/$defs/curs" },
+        "data_inici": { "type": "string" },
+        "data_final": { "type": "string" }
+      },
+      "required": ["id_assignatura", "nom_assignatura", "cicle"]
+    },
+
+    "alumne": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "nom": { "type": "string" },
+        "llinatges": { "type": "string" },
+        "data_naixement": { "type": "string" },
+        "correu": { "type": "string" },
+        "telefon": { "type": "string" },
+        "adreca": { "type": "string" },
+        "data_matricula": { "type": "string" },
+        "curs": { "$ref": "#/$defs/curs" }
+      },
+      "required": ["id","nom","llinatges","data_matricula","curs"]
+    },
+
+    "professor": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "nom": { "type": "string" },
+        "llinatges": { "type": "string" },
+        "data_naixement": { "type": "string" },
+        "correu": { "type": "string" },
+        "telefon": { "type": "string" },
+        "adreca": { "type": "string" },
+        "data_incorporacio": { "type": "string" },
+        "departament": { "$ref": "#/$defs/departament" },
+        "assignatura": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/assignatura" }
+        }
+      },
+      "required": ["id","nom","llinatges","data_incorporacio","departament"]
+    }
+  }
+}

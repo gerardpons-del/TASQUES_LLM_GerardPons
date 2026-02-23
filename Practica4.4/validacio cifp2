@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cifp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="cifp.xsd">
+
+  <alumne id="1">
+    <nom>Joan</nom>
+    <llinatges>Garcia Pons</llinatges>
+    <data_matricula>2024-09-01</data_matricula>
+    <curs>DAM</curs>
+  </alumne>
+
+  <alumne id="10">
+    <nom>Maria</nom>
+    <llinatges>Lopez Serra</llinatges>
+    <correu>maria@example.com</correu>
+    <data_matricula>2023-09-01</data_matricula>
+    <curs>DAW</curs>
+  </alumne>
+
+  <professor id="5">
+    <nom>Pere</nom>
+    <llinatges>Martinez Fluxa</llinatges>
+    <data_incorporacio>2020-01-10</data_incorporacio>
+    <departament>Informàtica</departament>
+
+    <assignatura id_assignatura="101">
+      <nom_assignatura cicle="DAM">Programació</nom_assignatura>
+      <data_inici>2024-09-01</data_inici>
+    </assignatura>
+
+    <assignatura id_assignatura="102">
+      <nom_assignatura cicle="DAW">Bases de Dades</nom_assignatura>
+    </assignatura>
+
+  </professor>
+
+</cifp>

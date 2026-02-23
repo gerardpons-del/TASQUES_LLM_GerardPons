@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- ENUM curs -->
+  <xs:simpleType name="CursType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DAM"/>
+      <xs:enumeration value="DAW"/>
+      <xs:enumeration value="ASIX"/>
+      <xs:enumeration value="SMX"/>
+      <xs:enumeration value="SEIA"/>
+      <xs:enumeration value="ER"/>
+      <xs:enumeration value="AUT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ENUM departament -->
+  <xs:simpleType name="DepartamentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Informàtica"/>
+      <xs:enumeration value="Electricitat"/>
+      <xs:enumeration value="Automoció"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Assignatura -->
+  <xs:complexType name="AssignaturaType">
+    <xs:sequence>
+      <xs:element name="nom_assignatura">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="cicle" type="CursType" use="required"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="data_inici" type="xs:string" minOccurs="0"/>
+      <xs:element name="data_final" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id_assignatura" type="xs:integer" use="required"/>
+  </xs:complexType>
+
+  <!-- Alumne -->
+  <xs:complexType name="AlumneType">
+    <xs:sequence>
+      <xs:element name="nom" type="xs:string"/>
+      <xs:element name="llinatges" type="xs:string"/>
+      <xs:element name="data_naixement" type="xs:string" minOccurs="0"/>
+      <xs:element name="correu" type="xs:string" minOccurs="0"/>
+      <xs:element name="telefon" type="xs:string" minOccurs="0"/>
+      <xs:element name="adreca" type="xs:string" minOccurs="0"/>
+      <xs:element name="data_matricula" type="xs:string"/>
+      <xs:element name="curs" type="CursType"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:integer" use="required"/>
+  </xs:complexType>
+
+  <!-- Professor -->
+  <xs:complexType name="ProfessorType">
+    <xs:sequence>
+      <xs:element name="nom" type="xs:string"/>
+      <xs:element name="llinatges" type="xs:string"/>
+      <xs:element name="data_naixement" type="xs:string" minOccurs="0"/>
+      <xs:element name="correu" type="xs:string" minOccurs="0"/>
+      <xs:element name="telefon" type="xs:string" minOccurs="0"/>
+      <xs:element name="adreca" type="xs:string" minOccurs="0"/>
+      <xs:element name="data_incorporacio" type="xs:string"/>
+      <xs:element name="departament" type="DepartamentType"/>
+      <xs:element name="assignatura" type="AssignaturaType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:integer" use="required"/>
+  </xs:complexType>
+
+  <!-- Arrel -->
+  <xs:element name="cifp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="alumne" type="AlumneType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="professor" type="ProfessorType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
