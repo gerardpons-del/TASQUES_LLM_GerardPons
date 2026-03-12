@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="html" indent="yes" encoding="UTF-8"/>
+
+  <xsl:template match="/">
+    <html>
+      <head>
+        <title>Llista d'empleats</title>
+        <style>
+          h2 { font-family: sans-serif; }
+          h3 { color: blue; font-size: 1.5em; margin-bottom: 0.2em; }
+          ul { list-style-type: none; padding-left: 1em; }
+          li { margin: 0.3em 0; }
+          .employee-name { font-size: 18px; }
+          .office-details { color: red; font-style: italic; }
+          .office-details strong { font-weight: bold; }
+        </style>
+      </head>
+      <body>
+        <h2>Llista d'empleats</h2>
+        <ul>
+          <xsl:for-each select="employees/employee">
+            <xsl:sort select="firstName" data-type="text" order="ascending"/>
+            <li>
+              <h3>Empleat amb id <xsl:value-of select="@employeeNumber"/></h3>
+              <ul>
+                <li class="employee-name">
+                  <strong>Nom:</strong> <xsl:value-of select="concat(firstName, ' ', lastName)"/>
+                </li>
+                <li><strong>Correu:</strong> <xsl:value-of select="email"/></li>
+                <li><strong>Id del seu superior:</strong> <xsl:value-of select="reportsTo"/></li>
+                <li><strong>Posició:</strong> <xsl:value-of select="jobTitle"/></li>
+                <li>
+                  <strong>Oficina amb codi:</strong> <xsl:value-of select="office/officeCode"/>
+                  <ul class="office-details">
+                    <li><strong>Telèfon:</strong> <xsl:value-of select="office/phone"/></li>
+                    <li>
+                      <strong>Adreça:</strong>
+                      <xsl:value-of select="office/addressLine1"/>
+                      <xsl:if test="office/addressLine2 and office/addressLine2 != 'NULL'">
+                        <xsl:text>, </xsl:text><xsl:value-of select="office/addressLine2"/>
+                      </xsl:if>
+                    </li>
+                    <li><strong>Estat:</strong> <xsl:value-of select="office/state"/></li>
+                    <li><strong>País:</strong> <xsl:value-of select="office/country"/></li>
+                    <li><strong>Codi Postal:</strong> <xsl:value-of select="office/postalCode"/></li>
+                    <li><strong>Territori:</strong> <xsl:value-of select="office/territory"/></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </xsl:for-each>
+        </ul>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>
