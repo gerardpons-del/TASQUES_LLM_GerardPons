@@ -1,0 +1,28 @@
+1.1. Quins són els noms dels clients que tenen una factura entre 500 i 1000 €? . El resultat de la consulta ha de ser aquest:
+Filomeno
+//factura[total >= 500 and total <= 1000]/client/raosocial/nom
+
+1.2. En quants rebuts s’ha venut l’article “Porquet de xocolata negra”?.. El resultat de la consulta ha de ser aquest:
+2
+
+count(//rebut[.//descripcio = "Porquet de xocolata negra"])
+
+1.3. Quina quantitat s’ha ingressat per la venda de porquets de xocolata amb llet? . El resultat de la consulta ha de ser aquest:
+
+550
+
+sum(//producte[descripcio = "Porquet de xocolata amb llet"]/(quantitat * preuunitari))
+
+1.4. Quins són els números dels rebuts en els quals s’han venut 2 o 50 articles?  . 
+Nota: Aquí s'ha de tenir en compte l'element "quantitat". Per exemple, el rebut número 24 té 50 articles del producte "Porquet de xocolata negra". Així que aquest rebut s'hauria de retornar.
+El resultat de la consulta ha de ser aquest:
+28  24
+//rebut[sum(.//quantitat) = 2 or sum(.//quantitat) = 50]/@numero
+
+1.5. Mostra un llistat del total de les factures emeses als clients. El llistat s'ha d'ordenar major a menor import i ha de mostrar el nom del client i l'import total, amb el següent format: 
+Client XXXX. Total factura: YYYY
+for $factura in //factura
+let $nom := $factura/client/raosocial/nom
+let $total := $factura/total
+order by $total descending
+return concat("Client ", $nom, ". Total factura: ", $total)
