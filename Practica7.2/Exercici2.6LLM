@@ -1,0 +1,2 @@
+for $doc in collection('docs')
+return concat('/docs/', base-uri($doc), ': ', count($doc//empleat))

@@ -1,0 +1,1 @@
+format-number(avg(collection('docs')//salari/data()), '0.00')

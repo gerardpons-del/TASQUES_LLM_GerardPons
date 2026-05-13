@@ -1,0 +1,2 @@
+let $max := max(collection('docs')//edat/data())
+return collection('docs')//empleat[edat = $max] ! concat(nom, ' ', llinatges)

@@ -1,0 +1,5 @@
+let $mitjana := avg(collection('docs')//salari/data())
+let $empleats := collection('docs')//empleat[number(salari) > $mitjana]
+for $e in $empleats
+order by number($e/salari) descending
+return concat($e/nom, ' ', $e/llinatges, ', ', $e/salari)
